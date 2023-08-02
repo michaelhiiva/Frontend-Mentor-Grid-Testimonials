@@ -1,32 +1,49 @@
 :root {
-    --font-size: 13px;
+  --font-size: 13px;
 
-    /* Primary Colors */
-    --color-primary-moderate-violet: hsl(263, 55%, 52%);
-    --color-primary-very-dark-grayish-blue: hsl(217, 19%, 35%);
-    --color-primary-very-dark-blakish-blue: hsl(219, 29%, 14%);
-    --color-primary-white: hsl(0, 0%, 100%);
+  /* Primary Colors */
+  --color-primary-moderate-violet: hsl(263, 55%, 52%);
+  --color-primary-very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --color-primary-very-dark-blakish-blue: hsl(219, 29%, 14%);
+  --color-primary-white: hsl(0, 0%, 100%);
 
-    /* Neutral Colors */
-    --color-neutral-light-gray: hsl(0, 0%, 81%);
-    --color-neutral-light-grayish-blue: hsl(210, 46%, 95%);
+  /* Neutral Colors */
+  --color-neutral-light-gray: hsl(0, 0%, 81%);
+  --color-neutral-light-grayish-blue: hsl(210, 46%, 95%);
 }
 
 html {
-    font-size: var(--font-size);
+  font-size: var(--font-size);
 }
 
 body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+.testimonial_grid {
+  padding-block: 2rem;
+  width: min(95%, 70rem);
+  margin-inline: auto;
 }
 
 .testimonial {
-    font-size: var(--fs-400);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 2.5rem 3.75rem 3rem -3rem var(--color-neutral-light-grayish-blue);
+  font-size: var(--fs-400);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 2.5rem 3.75rem 3rem -3rem var(--color-neutral-light-grayish-blue);
+}
+
+.testimonial.quote {
+  background-image: url("./images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 10%;
+}
+
+.testimonial img {
+  width: 1.75rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
 }
 
 .attribution {
