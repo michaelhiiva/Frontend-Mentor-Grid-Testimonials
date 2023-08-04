@@ -4,8 +4,16 @@
   /* Primary Colors */
   --color-primary-moderate-violet: hsl(263, 55%, 52%);
   --color-primary-very-dark-grayish-blue: hsl(217, 19%, 35%);
-  --color-primary-very-dark-blakish-blue: hsl(219, 29%, 14%);
+  --color-primary-outline-profile-picture: #A775F1;
+  --color-primary-very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --color-primary-first-qoute: #48556A;
+  --color-primary-second-color-dark-text: var(--color-primary-outline-profile-picture);
   --color-primary-white: hsl(0, 0%, 100%);
+
+  /* Font Styles */
+  --font-family-primary: 'Barlow Semi Condensed', sans-serif;
+  --font-weight-500: 500;
+  --font-weight-700: 700;
 
   /* Neutral Colors */
   --color-neutral-light-gray: hsl(0, 0%, 81%);
@@ -17,40 +25,153 @@ html {
 }
 
 body {
+  display: grid;
+  place-content: center;
+
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-500);
+
+  background-color: var(--color-neutral-light-grayish-blue);
 }
+
 .testimonial_grid {
+  display: grid;
+  gap: 2rem;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+   'one'
+   'two'
+   'three'
+   'four'
+   'five';
+
   padding-block: 2rem;
   width: min(95%, 70rem);
   margin-inline: auto;
 }
 
 .testimonial {
-  font-size: var(--fs-400);
-  padding: 2rem;
-  border-radius: 0.5rem;
-  box-shadow: 2.5rem 3.75rem 3rem -3rem var(--color-neutral-light-grayish-blue);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 1.5rem 2.75rem 3rem -3.25rem var(--color-primary-very-dark-grayish-blue);
 }
 
-.testimonial.quote {
-  background-image: url("./images/bg-pattern-quotation.svg");
-  background-repeat: no-repeat;
-  background-position: top right 10%;
+.testimonial:nth-child(1) {
+  grid-area: one;
+  background-color: var(--color-primary-moderate-violet);
+}
+
+.testimonial:nth-child(2) {
+  grid-area: two;
+  background-color: var(--color-primary-very-dark-grayish-blue);
+}
+.testimonial:nth-child(3) {
+  grid-area: three;
+  background-color: var(--color-primary-white);
+}
+.testimonial:nth-child(4) {
+  grid-area: four;
+  background-color: var(--color-primary-very-dark-blackish-blue);
+}
+.testimonial:nth-child(5) {
+  grid-area: five;
+  background-color: var(--color-primary-white);
+}
+
+.testimonial__flex {
+  display: flex;
+  align-items: center;
+  gap: var(--gap, .5rem);
+}
+@media screen and (min-width: 33em) {
+  .testimonial_grid {
+      grid-template-areas:
+      "one one"
+      "two three"
+      "five five"
+      "four four";
+  }
+}
+
+@media screen and (min-width: 54em) {
+  .testimonial_grid {
+      grid-template-areas:
+      "one one two"
+      "five five five"
+      "three four four";
+  }
+}
+
+@media screen and (min-width: 75em) {
+  .testimonial_grid {
+      grid-template-areas:
+      "one one two five"
+      "three four four five";
+  }
 }
 
 .testimonial img {
-  width: 1.75rem;
+  width: 3rem;
   aspect-ratio: 1;
   border-radius: 50%;
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
+.testimonial__name {
+  margin: 0;
+  line-height: 1;
+  font-size: 1rem;
 }
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
+.testimonial__position {
+  margin: 0;
+  font-size: .83rem;
+}
+
+.testimonial__light_color_text img {
+  border: .25rem solid var(--color-primary-outline-profile-picture);
+}
+
+.testimonial__light_color_text h2 {
+  color: var(--color-primary-white);
+}
+
+.testimonial__light_color_text .testimonial__position {
+  color: var(--color-neutral-light-gray);
+}
+
+.testimonial__light_color_text > p:first-of-type {
+  color: var(--color-primary-white);
+}
+
+.testimonial__light_color_text > p:last-of-type {
+  color: var(--color-neutral-light-gray);
+}
+
+.testimonial__darker_color_text h2 {
+  color: var(--color-primary-second-color-dark-text);
+}
+
+.testimonial__darker_color_text .testimonial__position {
+  color: var(--color-primary-very-dark-blackish-blue);
+}
+
+.testimonial__darker_color_text > p:first-of-type {
+  color: var(--color-primary-first-qoute);
+}
+
+.testimonial__dark_color_text > p:last-of-type {
+  color: var(--color-neutral-light-gray);
+}
+
+.testimonial > p:first-of-type {
+  font-size: 1.125rem;
+  line-height: 1.2;
+}
+
+.testimonial > p:last-of-type {
+  opacity: 0.7;
 }
