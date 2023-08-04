@@ -38,6 +38,12 @@ body {
   background-color: var(--color-neutral-light-grayish-blue);
 }
 
+.qoute {
+  background-image: url("../images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 15%;
+}
+
 .testimonial_grid {
   display: grid;
   gap: 2rem;
