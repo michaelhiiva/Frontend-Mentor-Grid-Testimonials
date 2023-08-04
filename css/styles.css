@@ -176,3 +176,8 @@ body {
 .testimonial > p:last-of-type {
   opacity: 0.5;
 }
+
+.attribution {
+  text-align: center;
+  margin: 0 auto;
+}
