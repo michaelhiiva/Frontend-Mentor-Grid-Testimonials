@@ -152,11 +152,12 @@ body {
 }
 
 .testimonial__darker_color_text h2 {
-  color: var(--color-primary-second-color-dark-text);
+  color: var(--color-primary-first-qoute);
 }
 
 .testimonial__darker_color_text .testimonial__position {
   color: var(--color-primary-very-dark-blackish-blue);
+  opacity: .5;
 }
 
 .testimonial__darker_color_text > p:first-of-type {
@@ -173,5 +174,5 @@ body {
 }
 
 .testimonial > p:last-of-type {
-  opacity: 0.7;
+  opacity: 0.5;
 }
